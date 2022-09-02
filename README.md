@@ -19,3 +19,7 @@ This repo contains exercises from Typescript and Design Patterns' Course
 4. sort_dp
 
    Creation of a collection sorter algorithm that uses inheritance or abstract classes to build a reusable and clean code to develop a sorter algorithm to any collection type needed
+
+5. reusable_code
+
+   Project to learn principles of reusable code with ts
