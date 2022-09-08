@@ -1,13 +1,15 @@
+// this is a node standard funcion, so it should be using @types/node
+// to properly work
 import fs from 'fs';
 
-export class CsvFileReader {
+export default class CsvFileReader {
   data: string[][] = [];
 
   constructor(public filename: string) {}
 
   read(): void {
     this.data = fs
-      .readFileSync('football.csv', {
+      .readFileSync(this.filename, {
         encoding: 'utf-8',
       })
       .split('\n')

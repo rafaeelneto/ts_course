@@ -1,5 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+var CsvFileReader_1 = __importDefault(require("./CsvFileReader"));
 var manUnitedWins = 0;
 // for (const match of matches) {
 //   // SHOULD BE REFACTORED TO CLARIFY WHATS H AND A
@@ -25,12 +29,14 @@ var MatchResult;
 //     return MatchResult.HomeWin;
 //   }
 // };
-for (var _i = 0, matches_1 = matches; _i < matches_1.length; _i++) {
-    var match_1 = matches_1[_i];
-    if (match_1[1] === 'Man United' && match_1[5] === 'H') {
+var csvReader = new CsvFileReader_1.default('football.csv');
+csvReader.read();
+for (var _i = 0, _a = csvReader.data; _i < _a.length; _i++) {
+    var match = _a[_i];
+    if (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
         manUnitedWins++;
     }
-    if (match_1[2] === 'Man United' && match_1[5] === 'A') {
+    if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin) {
         manUnitedWins++;
     }
 }

@@ -1,7 +1,4 @@
-// this is a node standard funcion, so it should be using @types/node
-// to properly work
-import { match } from 'assert';
-import fs from 'fs';
+import CsvFileReader from './CsvFileReader';
 
 let manUnitedWins = 0;
 
@@ -31,12 +28,14 @@ enum MatchResult {
 //     return MatchResult.HomeWin;
 //   }
 // };
+const csvReader = new CsvFileReader('football.csv');
+csvReader.read();
 
-for (const match of matches) {
-  if (match[1] === 'Man United' && match[5] === 'H') {
+for (const match of csvReader.data) {
+  if (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
     manUnitedWins++;
   }
-  if (match[2] === 'Man United' && match[5] === 'A') {
+  if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin) {
     manUnitedWins++;
   }
 }
