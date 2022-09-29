@@ -40,4 +40,4 @@ for (var _i = 0, _a = csvReader.data; _i < _a.length; _i++) {
         manUnitedWins++;
     }
 }
-console.log("MAN UNITED WON " + manUnitedWins + " GAMES");
+console.log("MAN UNITED WON ".concat(manUnitedWins, " GAMES"));

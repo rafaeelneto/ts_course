@@ -1,4 +1,5 @@
 import CsvFileReader from './CsvFileReader';
+import {MatchResult} from './MatchResult';
 
 let manUnitedWins = 0;
 
@@ -14,11 +15,7 @@ let manUnitedWins = 0;
 // }
 
 // ENUM
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D',
-}
+
 
 // ENUNS USES A NORMAL OBJECT LIKE SYNTAX
 // THEY'RE USED TO INDICATE CLOSELY RELATED VALUES
