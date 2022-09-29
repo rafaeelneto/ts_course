@@ -1,10 +1,11 @@
 // this is a node standard funcion, so it should be using @types/node
 // to properly work
 import fs from 'fs';
-import { DataReader } from './MatchReader';
+import { stringToDate } from '../utils';
 
-export default class CsvFileReader implements DataReader {
-  data: string[][] = [];
+export abstract class CsvFileReader<T> {
+  data: T[] = [];
+  abstract rowParser(row: string[]): T;
 
   constructor(public filename: string) {}
 
@@ -16,6 +17,7 @@ export default class CsvFileReader implements DataReader {
       .split('\n')
       .map((row): string[] => {
         return row.split(',');
-      });
+      })
+      .map(this.rowParser);
   }
 }

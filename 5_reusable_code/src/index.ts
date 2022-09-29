@@ -1,31 +1,10 @@
-import CsvFileReader from './CsvFileReader';
-import {MatchResult} from './MatchResult';
+import { MatchResult } from './MatchResult';
+
+import { MatchReader } from './MatchReader';
 
 let manUnitedWins = 0;
 
-// for (const match of matches) {
-//   // SHOULD BE REFACTORED TO CLARIFY WHATS H AND A
-//   // WITH THE USE OF ENUMS
-//   if (match[1] === 'Man United' && match[5] === 'H') {
-//     manUnitedWins++;
-//   }
-//   if (match[2] === 'Man United' && match[5] === 'A') {
-//     manUnitedWins++;
-//   }
-// }
-
-// ENUM
-
-
-// ENUNS USES A NORMAL OBJECT LIKE SYNTAX
-// THEY'RE USED TO INDICATE CLOSELY RELATED VALUES
-
-// const printMatchResult = (): MatchResult => {
-//   if (match[5] === 'H') {
-//     return MatchResult.HomeWin;
-//   }
-// };
-const csvReader = new CsvFileReader('football.csv');
+const csvReader = new MatchReader('football.csv');
 csvReader.read();
 
 for (const match of csvReader.data) {
