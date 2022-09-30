@@ -4,10 +4,11 @@ var utils_1 = require("./utils");
 var MatchReader = /** @class */ (function () {
     function MatchReader(reader) {
         this.reader = reader;
+        this.matches = [];
     }
     MatchReader.prototype.load = function () {
         this.reader.read();
-        this.reader.data.map(function (row) {
+        this.matches = this.reader.data.map(function (row) {
             return [
                 utils_1.stringToDate(row[0]),
                 row[1],

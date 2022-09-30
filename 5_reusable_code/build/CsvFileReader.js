@@ -23,4 +23,4 @@ var CsvFileReader = /** @class */ (function () {
     };
     return CsvFileReader;
 }());
-exports.default = CsvFileReader;
+exports.CsvFileReader = CsvFileReader;
